@@ -1,4 +1,8 @@
 package Ranarimahefa.Mitantsoa;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+import java.io.File;
 
 public class TestIA {
 	
@@ -64,6 +68,16 @@ public static void main(String[] args) {
 		}
 		
 		System.out.println(medium2.getName() + ";"+scoreMedium2+";"+hard2.getName()+";"+scoreHard2);
+		
+		try{
+			PrintWriter writer = new PrintWriter("resultat.txt", "UTF-8");
+			writer.println(beginner.getName() + ";"+scoreBeginner+";"+medium.getName()+";"+scoreMedium);
+			writer.println(beginner2.getName() + ";"+scoreBeginner2+";"+hard.getName()+";"+scoreHard);
+			writer.println(medium2.getName() + ";"+scoreMedium2+";"+hard2.getName()+";"+scoreHard2);
+			writer.close();
+			
+			} catch (Exception e) {}
+
 		
 	}
 
