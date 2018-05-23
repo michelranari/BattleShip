@@ -1,3 +1,4 @@
+package Ranarimahefa.Mitantsoa;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -37,21 +38,4 @@ public class Box {
 		this.touched = value;
 	}
 	
-	public static void main(String[] args) {
-		
-		ArrayList<Box> box;
-		box = new ArrayList<Box>();
-		Box box1 = new Box('a',1);
-		Box box2 = new Box('b',2);
-		Box box3 = new Box('c',2);
-		Box box4 = new Box('y',2);
-		Box box5 = new Box('d',9);
-		
-		box.add(box1);
-		box.add(box2);
-		box.add(box3);
-		box.add(box4);
-		System.out.println(box.indexOf(box3));
-		
-	}
 }

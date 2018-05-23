@@ -1,3 +1,4 @@
+package Ranarimahefa.Mitantsoa;
 import java.util.*;
 
 public class Ship {
@@ -8,12 +9,12 @@ public class Ship {
 	
 	public Ship(String startCoord, String endCoord){
 		
-		coordinates = new ArrayList<>();
+		this.coordinates = new ArrayList<>();
 		
-		char XstartCoord = startCoord.charAt(0);
-		int YstartCoord =  Character.getNumericValue(startCoord.charAt(1));
-		char XendCoord = endCoord.charAt(0);
-		int YendCoord =  Character.getNumericValue(endCoord.charAt(1));
+		char XstartCoord = Character.toLowerCase(startCoord.charAt(0));
+		int YstartCoord =  Integer.parseInt(startCoord.substring(1));
+		char XendCoord = Character.toLowerCase(endCoord.charAt(0));
+		int YendCoord = Integer.parseInt(endCoord.substring(1));
 		
 		if(XstartCoord == XendCoord){
 			this.direction = "vertical";
@@ -107,10 +108,8 @@ public class Ship {
 	
 	// return false if the box of x and y coordinates is a box of the ship, true otherwise
 	public boolean boxIsInShip(char xCoord, int yCoord ){
-		Box b = new Box(xCoord,yCoord);
-		boolean res = this.getCoordinates().contains(b);
-		return !(res);
-		/*int i = 0;
+		boolean res = true;
+		int i = 0;
 		while (res == true && i < this.getCoordinates().size()){
 			Box b = this.getBox(i);
 			char x = b.getX();
@@ -120,19 +119,8 @@ public class Ship {
 			}
 			i++;
 		}
-		return res;*/
-		
+		return res;
 	}
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		Scanner sc = new Scanner(System.in);
-		String coord = sc.nextLine();
-		char xCoordShoot = coord.charAt(0);
-		int yCoordShoot =  Integer.parseInt(coord.substring(1));
-		System.out.println(xCoordShoot);
-		System.out.println(yCoordShoot);
-		
-	}
+	
 
 }
